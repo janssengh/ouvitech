@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<body id="checkout-page">
+    {% with mensagens = get_flashed_messages() %}
+         {% if mensagens %}
+           <ul class="list-unstyled">
+            {% for mensagem in mensagens %}
+              <li class="alert-success">{{mensagem}}</li>
+            {% endfor %}
+           </ul>
+         {% endif %}
+    {% endwith %}
+    <div id="fade" class="hide">
+      <div id="loader" class="spinner-border text-info hide" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div id="message" class="hide">
+        <div class="alert alert-light" role="alert">
+          <h4>Mensagem:</h4>
+          <p></p>
+          <button id="close-message" type="button" class="btn btn-secondary">
+            Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="order-form-container" class="container p-6 my-md-4 px-md-0">
+        <div id="steps" class="mb-md-3 pb-md-3">
+            <div class="line"></div>
+            <div class="step">
+              <i class="bi bi-geo-alt active"></i>
+              <p class="d-none d-md-block">CEP da loja</p>
+            </div>
+            <div class="step">
+              <i class="bi bi-archive"></i>
+              <p class="d-none d-md-block">Dados da Loja</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 p-0">
+                <h2 class="text-center p-2">Informar Dados da Loja</h2>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+        <div class="col-md-2"></div>
+        <form action="dadosloja" method="post" id="address-form" novalidate>
+
+            {{form.csrf_token}}
+
+            <div class="row mb-3">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                    {{form.zipcode.label}}
+                    {{form.zipcode(class='form-control', placeholder='Digite seu CEP')}}
+                    {% if form.zipcode.errors %}
+                        <ul class='list-unstyled'>
+                            {% for error in form.zipcode.errors %}
+                            <li class='alert alert-warning'>{{error}}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {{form.submit(class='btn btn-success mt-3')}}
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+{% endblock content %}
