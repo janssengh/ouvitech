@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- Whatsapp Flutuante -->
+<div class="whatsapp">
+  <a href="https://web.whatsapp.com/send?phone=5542999996541" class="icon" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+</div>    
+
+{% include 'navbar-home.html' %}
+
+{% include 'banner.html' %}
+
+{% endblock content %}

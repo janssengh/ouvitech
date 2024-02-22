@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% include 'navbar-admin.html' %}
+
+{% block content %}
+
+{% include "_mensagem.html" %}
+
+<section class="mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-10 mx-auto col-lg-5">
+          {% from '_erroformulario.html' import render_field %}
+          <form method="post" class="p-4 p-md-5 border rounded-3 bg-light" enctype="multipart/form-data">
+            <div class="text-center p-2 data-text">
+              <h4>Alterar Informações da Loja</h4>
+            </div>
+            <div class="row">
+              <div class="col col-sm-12">
+                {{ render_field(form.name, class="form-control", placeholder="Nome da Loja") }}
+              </div>
+              <div class="row">
+                <div class="col col-sm-12">
+                  {{ render_field(form.freight_rate, class="form-control") }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-sm-12">
+                  {{ render_field(form.pages, class="form-control") }}
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <input type="submit" value="Atualizar Loja" class="btn btn-success btn-sm">
+                  </div>
+                  <div class="col-6">
+                    <a class="btn btn-danger btn-sm" href="{{url_for('loja')}}">
+                      Cancelar
+                    </a>
+                  </div>
+                </div>
+                <div class="row">
+                </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</section>
+
+{% endblock content %}

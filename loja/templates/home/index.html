@@ -1,17 +1,305 @@
 {% extends "layout.html" %}
 
-
 {% block content %}
-
-<!-- Whatsapp Flutuante -->
-<div class="whatsapp">
-    <a href="https://web.whatsapp.com/send?phone=5542999996541" class="icon" target="_blank">
-      <i class="bi bi-whatsapp"></i>
-    </a>
-</div>    
 
 {% include 'navbar-home.html' %}
 
-{% include 'banner.html' %}
+    <div>
+      <a id="link-contato" href="#contato">Fale Conosco</a>
+    </div>
+    
+    <!-- Whatsapp Flutuante -->
+    <!--<div class="whatsapp">
+      <a href="https://web.whatsapp.com/send?phone=5542999996541" class="icon" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>-->    
+
+    <br><br><br>
+
+    {% include 'banner.html' %}
+
+    <hr>
+
+    <!-- Typography / Sobre a Empresa -->
+    <div id="empresa" class="bg-body-tertiary">
+      <div class="col-11 m-auto">
+        <h2 class="text-center">Sobre a Empresa</h2>
+        <div class="text-center">
+          <p>Mussum Ipsum, cacilds vidis litro abertis. Manduma pindureta quium dia nois paga. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Mé faiz elementum girarzis, nisi eros vermeio. Detraxit consequat et quo num tendi nada.</p>
+          <p>Morbi viverra placerat justo, vel pharetra turpis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies.</p>
+          <p>Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Sapien in monti palavris qui num significa nadis i pareci latim. Morbi viverra placerat justo, vel pharetra turpis. Quem num gosta di mim que vai caçá sua turmis!</p>
+        </div>
+    </div>
+
+    </div>
+
+    <hr>
+    
+
+    <!-- linha/risco -->
+    <hr>
+
+    <!-- Components Card / Serviços -->
+    <div id="servicos">
+
+      <h2 class="text-center">Serviços</h2>
+
+      <!-- classe estava no div id=produtos, porém como g-4 -->
+      <div class="row row-cols-1 row-cols-md-3 g-6 col-11 m-auto">
+
+      <div class="col">
+          
+        <div class="card">
+          <img src="/img/img-4/produto-1_1900x1900px.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="/img/img-4/produto-2_1900x1268px.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="/img/img-4/produto-3_1900x1900px.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+    <!-- Components Card / Produtos -->
+    <!-- col-11 cocupa total de 11 colunas, e margem automático centralizado/alinhado -->
+    <div id="produtos" class="bg-body-tertiary">
+
+        <h2 class="text-center">Produtos</h2>
+
+        <!-- classe estava no div id=produtos, porém como g-4 -->
+        <div class="row row-cols-1 row-cols-md-3 g-6 col-11 m-auto">
+
+        <div class="col">
+            
+          <div class="card">
+            <img src="/img/img-4/produto-1_1900x1900px.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#image-1">
+                    Veja mais
+                </button>
+  
+                <!-- Modal -->
+                <div class="modal fade" id="image-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <img src="/img/img-4/produto-1_1900x1900px.jpg" class="card-img-top" alt="...">
+                          <p>
+                                Mussum Ipsum, cacilds vidis litro abertis.  Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Eu nunca mais boto a boca num copo de cachaça, agora eu só uso canudis! Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/img/img-4/produto-2_1900x1268px.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#image-2">
+                    Veja mais
+                </button>
+  
+                <!-- Modal -->
+                <div class="modal fade" id="image-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <img src="/img/img-4/produto-2_1900x1268px.jpg" class="card-img-top" alt="...">
+                          <p>
+                                Mussum Ipsum, cacilds vidis litro abertis.  Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Eu nunca mais boto a boca num copo de cachaça, agora eu só uso canudis! Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/img/img-4/produto-3_1900x1900px.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#image-3">
+                  Veja mais
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="image-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <img src="/img/img-4/produto-3_1900x1900px.jpg" class="card-img-top" alt="...">
+                        <p>
+                              Mussum Ipsum, cacilds vidis litro abertis.  Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Eu nunca mais boto a boca num copo de cachaça, agora eu só uso canudis! Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.
+                          </p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+    </div>
+
+    <!-- linha/risco -->
+    <hr>
+
+    <!-- Contato -->
+    <div id="contato" class="container text-center">
+      <h2 class="text-center">Contato</h2>
+      <br>
+      <div class="row align-items-end">
+        <div class="col">
+          <a href="https://aparelho-auditivo-surdez-ouvitec.negocio.site/?utm_source=gmb&utm_medium=referral">
+            <strong class="texto-estilo m-0" style="font: bold;">Ponta Grossa - Pr</strong>
+          </a>
+          <p class="texto-estilo m-0">R. Mal. Deodoro da Fonseca, 277 - Centro</p>
+          <p class="texto-estilo m-0">CEP: 84010-030</p>
+        </div>
+        <div class="col">
+          <button class="icon-whatsapp">
+            <a href="https://web.whatsapp.com/send?phone=5542998151706">
+            <i class="fab fa-whatsapp"></i>
+            </a>
+          </button>
+          <p class="texto-estilo m-0">(42) 99815-1706</p>
+          <!--<a href="https://web.whatsapp.com/send?phone=5542998151706" class="contact" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <p class="texto-estilo m-0">(42) 99815-1706</p>-->
+        </div>
+      </div>
+      <hr>
+      <div class="row align-items-end">
+          <div class="col">
+            <a href="https://ouvitechcuritiba.com/">
+              <strong class="texto-estilo m-0" style="font: bold;">Curitiba - Pr</strong>
+            </a>
+            <p class="texto-estilo m-0">Travessa Santa Inês, 40 - Loja 1 - Bacacheri</p>
+            <p class="texto-estilo m-0">CEP: 82515-220</p>
+          </div>
+          <div class="col">
+            <button class="icon-whatsapp">
+              <a href="https://web.whatsapp.com/send?phone=5541999888038">
+              <i class="fab fa-whatsapp"></i>
+              </a>
+            </button>
+            <p class="texto-estilo m-0">(41) 99988-8038</p>
+          </div>
+      </div>
+      <hr>
+      <div class="row align-items-end">
+          <div class="col">
+            <a href="#">
+              <strong class="texto-estilo m-0" style="font: bold;">Joinville - Sc</strong>
+            </a>
+            <p class="texto-estilo m-0">Inauguração em breve !</p>
+            <p class="texto-estilo m-0"></p>
+          </div>
+          <div class="col">
+            <button class="icon-whatsapp">
+              <a href="https://web.whatsapp.com/send?phone=5542998151706">
+              <i class="fab fa-whatsapp"></i>
+              </a>
+            </button>
+            <p class="texto-estilo m-0">(47) Contato em breve</p>
+          </div>
+      </div>
+      <hr>
+  </div>
+
+    <!-- Footer -->
+    <!-- no footer estava style="background-color: #333;" -->
+    <footer class="page-footer font-small blue p-3 bg-dark">
+      <div class="row align-items-end">
+        <div class="col text-center" style="color: white;">
+          <p style="font-size: 18px;">Aonde estamos</p>
+          <hr>
+          <a href="https://aparelho-auditivo-surdez-ouvitec.negocio.site/?utm_source=gmb&utm_medium=referral" style="color: white"><p>Ponta Grossa - Paraná</p></a>
+          <a href="https://ouvitechcuritiba.com/" style="color: white"><p>Curitiba - Paraná</p></a>
+          <a href="#" style="color: white"><p>Joinville - Santa Catarina</pe=></a>
+        </div>
+        <div class="col text-center m-auto" style="color: white;">
+          <img src="/img/img-4/logo(126x60).ico" alt="">
+          <p style="color: rgb(230,87,66)">Amplificando Sorrisos com o Som</p>
+          <hr>
+          <p>&copy; 2023 - Marketing Janssen - MKT JANSSEN</p>
+          <!--<p style="color: white;">₢ 2023 - Marketing Janssen - MKT JANSSEN</p>-->
+        </div>
+        <div class="col text-center" style="color: white;">
+          <p style="font-size: 18px;">Redes Sociais</p>
+          <hr>
+          <p>Ponta Grossa (PR)</p>
+          <p>Curitiba (PR)</pstyle=>
+          <p>Joinville (SC)</pstyle=>
+        </div>
+      </div>
+    </footer>
+    <script src="{{url_for('static', filename='bootstrap/js/bootstrap.bundle.js')}}"></script>
 
 {% endblock content %}

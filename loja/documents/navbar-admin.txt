@@ -1,0 +1,56 @@
+<nav class="navbar col-12 position-fixed navbar-expand-lg bg-body-secondary" style="z-index: 999;">
+
+    <!-- col-11: ocupa total de 11 colunas ; m-auto: margin automático centraliza/alinha -->
+    <div class="container-fluid col-11 m-auto">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/admin">
+                        <h4>Página Administrativa</h4>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <p class="nav-link" style="color: rgb(230,87,66)"><strong>Ouvitech - Aparelhos Auditivos</strong>
+                    </p>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Loja
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{url_for('lojacep')}}">Incluir</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('loja')}}">Consultar</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('home')}}">Site</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Marcas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Categorias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tamanhos</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Produtos
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Incluir Produtos</a></li>
+                        <li><a class="dropdown-item" href="#">Incluir Marcas</a></li>
+                        <li><a class="dropdown-item" href="#">Incluir Categorias</a></li>
+                        <li><a class="dropdown-item" href="#">Incluir Cores</a></li>
+                        <li><a class="dropdown-item" href="#">Incluir Tamanhos</a></li>
+                        <li><a class="dropdown-item" href="#">Incluir Embalagens</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

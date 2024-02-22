@@ -50,3 +50,4 @@ patch_request_class(app)
 
 from loja.home import rotas
 from loja.admin import rotas
+from loja.produtos import rotas

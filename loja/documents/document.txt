@@ -1,0 +1,36 @@
+Instalações das bibliotecas python no terminal:
+
+pip install flask 
+pip install flask_sqlalchemy (permite fazer comandos sql automaticamente - https://flask-sqlalchemy.palletsprojects.com)
+pip install flask-bcrypt (permite criptografar senhas)
+pip install flask-bcrypt
+pip install flask-uploads
+pip install flask-Migrate
+pip install -U werkzeug==3.0.0
+Foi alterado de acordo com erro.
+pip install flask_sqlalchemy
+pip install flask-uploads
+pip install mysqlclient
+pip install flask-wtf (permite criação de formulários)
+pip install flask-bcrypt (permite criptografar senhas)
+pip install requests (facilita o envio e recebimento de informações pela internet) 
+pip install flask_sqlalchemy_session
+pip install wtforms.validators
+
+Validação formulário personalizado:
+
+def valida_desconto(form, field):
+    if field.data == 15000:
+        raise validators.ValidationError('Desconto inválido !')
+
+class ProductForm(FlaskForm):
+    name = StringField('Nome', validators=[validators.Length(min=20, max=80, message="Nome produto deve ter no mínimo 20 e no máximo 80 caracteres"),
+                                                  validators.DataRequired('Faltou digitar o nome do produto')
+                                                  ])
+    price = DecimalField('Preço', validators=[validators.NumberRange(min=1, max=None, message="O preço deve ter valor no mínimo 1"),
+                                                  validators.DataRequired('Faltou digitar o preço do produto')
+                                                  ])
+    discount = IntegerField('Valor do Desconto', validators=[validators.DataRequired('Faltou digitar o valor desconto do produto'), valida_desconto])
+
+
+if request.method == "POST" and form.validate():

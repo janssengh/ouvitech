@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% include 'navbar-admin.html' %}
+{% block content %}
+
+<section class="mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-10 mx-auto col-lg-5">
+          {% include "_mensagem.html" %}
+          <form method="post" class="p-4 p-md-5 border rounded-3 bg-light">
+            <div class="text-center p-2 data-text">
+              <h4>Alterar Embalagens</h4>
+            </div>
+
+            <div class="form-embal">
+              <label for="format">Adicionar um Formato</label>
+              <select name="format" id="format" class="form-select" required>
+                <option value="{{updatepack.format}}">{{discformat}}</option>
+                <option value="1">Caixa/Pacote</option>
+                <option value="2">Rolo/Prisma</option>
+                <option value="3">Envelope</option>
+              </select>
+              <label for="">Peso</label>
+              <input type="number" name="weight" class="form-control" value="{{updatepack.weight}}" required min="1">
+              <label for="">Comprimento</label>
+              <input type="number" name="length" class="form-control" value="{{updatepack.length}}" required min="1">
+              <label for="">Altura</label>
+              <input type="number" name="height" class="form-control" value="{{updatepack.height}}" required min="1">
+              <label for="">Largura</label>
+              <input type="number" name="width" class="form-control" value="{{updatepack.width}}" required min="1">
+            </div>
+
+            <input type="submit" value="Atualizar Embalagem" class="btn btn-success btn-sm mt-2">
+            <a class="btn btn-danger btn-sm mt-2" href="{{url_for('embalagens')}}">Cancelar</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

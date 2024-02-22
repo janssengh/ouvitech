@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% include 'navbar-admin.html' %}
+
+{% block content %}
+
+{% include '_mensagem.html' %}
+
+<section class="mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-10 mx-auto col-lg-5">
+
+                    <form method="post" enctype="multipart/form-data" class="p-4 p-md-5 border rounded-3 bg-light">
+                        <div class="text-center p-2 data-text">
+                            <h4>Alterar Usuário | Loja</h4>
+                        </div>
+
+                        <label for="loja">Adicionar uma Loja</label>
+                        <select name="loja" id="loja" class="form-select" required>
+                            <option value="{{usuarios.loja.id}}">{{usuarios.loja.name}}</option>
+                            {% for loja in lojas %}
+                            <option value={{loja.id}}>{{loja.name}}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit" class="btn btn-success mt-2">Atualizar Produto</button>
+                        <a class="btn btn-danger mt-2" href="{{url_for('admin')}}">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

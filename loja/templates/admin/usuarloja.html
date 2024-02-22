@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% include 'navbar-admin.html' %}
+
+<div class="container mt-3">
+    <h3 class="mt-2 text-start data-text">{{titulo}}</h3>
+    <table class="table table table-sm table-striped">
+        <thead>
+            <th>Serial</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Loja</th>
+            <th>Editar</th>
+            <th>Deletar</th>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td>{{usuario.name}}</td>
+                <td>{{usuario.email}}</td>
+                <td>{{usuario.loja.name}}</td>
+                <td><a href="{{url_for('usuarlojaalt', id=usuario.id)}}" class="btn btn-success btn-sm">Editar</a></td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal-{{usuario.id}}">
+                        Excluir
+                    </button>
+                </td>
+            </tr>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal-{{usuario.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">{{usuario.name}}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <span class="text-danger">Deseja realmente excluir o usuário {{usuario.name}}?</span>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning btn-sm"
+                                data-bs-dismiss="modal">Cancelar</button>
+                            <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                            <form action="#" method="POST">
+                                <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+</div>
+
+{% include '_mensagem.html' %}
+
+{% endblock content %}

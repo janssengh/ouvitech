@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% include 'navbar-admin.html' %}
+{% block content %}
+{% include "_mensagem.html" %}
+
+<section class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-10 mx-auto col-lg-5">
+                {% from '_erroformulario.html' import render_field %}
+                    
+                {% if updatecor %}
+                <form method="post" class="p-4 p-md-5 border rounded-3 bg-light">
+                    {{form.csrf_token}}
+                    <div class="text-center p-2 data-text">
+                        <h4>Alterar Cores</h4>
+                    </div>
+
+                    {{ render_field(form.name, class="form-control") }}
+
+                    <input type="submit" value="Atualizar Cor" class="btn btn-success btn-sm mt-2">
+                    <a class="btn btn-danger btn-sm mt-2" href="{{url_for('cores')}}">
+                        Cancelar
+                    </a>
+                </form>
+      
+                {% else %}
+      
+                <form method="post" class="p-4 p-md-5 border rounded-3 bg-light">
+                    {{form.csrf_token}}
+                    <div class="text-center p-2 data-text">
+                        <h4>Alterar Tamanhos</h4>
+                    </div>
+
+                    {{ render_field(form.name, class="form-control") }}
+
+                    <input type="submit" value="Atualizar Tamanho" class="btn btn-success btn-sm mt-2">
+                    <a class="btn btn-danger btn-sm mt-2" href="{{url_for('cores')}}">
+                        Cancelar
+                    </a>
+                </form>
+      
+              {% endif %}
+      
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+      </div>
+      
+
+</section>
+
+
+{% endblock content %}

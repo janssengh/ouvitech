@@ -1,56 +1,61 @@
-<nav class="navbar col-12 position-fixed navbar-expand-lg bg-body-secondary" style="z-index: 999;">
+<nav class="navbar col-12 navbar-expand-lg bg-body-secondary accordion" style="z-index: 999;">
 
-    <!-- col-11: ocupa total de 11 colunas ; m-auto: margin automático centraliza/alinha -->
-    <div class="container-fluid col-11 m-auto">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">
-                        <h4>Página Administrativa</h4>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <p class="nav-link" style="color: rgb(230,87,66)"><strong>Ouvitech - Aparelhos Auditivos</strong>
-                    </p>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Loja
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{url_for('lojacep')}}">Incluir</a></li>
-                        <li><a class="dropdown-item" href="#">Consultar</a></li>
-                        <li><a class="dropdown-item" href="{{url_for('home')}}">Site</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Marcas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Categorias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Cores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Tamanhos</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Produtos
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Incluir Produtos</a></li>
-                        <li><a class="dropdown-item" href="#">Incluir Marcas</a></li>
-                        <li><a class="dropdown-item" href="#">Incluir Categorias</a></li>
-                        <li><a class="dropdown-item" href="#">Incluir Cores</a></li>
-                        <li><a class="dropdown-item" href="#">Incluir Tamanhos</a></li>
-                        <li><a class="dropdown-item" href="#">Incluir Embalagens</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+  <!-- col-11: ocupa total de 11 colunas ; m-auto: margin automático centraliza/alinha -->
+  <div class="container-fluid col-11 m-auto">
+    <a class="navbar-brand" href="#">
+      <img src="{{url_for('static', filename='img/logo(126x60)transp.png')}}" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{url_for('admin')}}">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Loja
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{url_for('lojacep')}}">Incluir Loja</a></li>
+            <li><a class="dropdown-item" href="{{url_for('loja')}}">Consultar Loja</a></li>
+            <li><a class="dropdown-item" href="{{url_for('home')}}">Site</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('marcas')}}">Marcas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('categorias')}}">Categorias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('cores')}}">Cores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('tamanhos')}}">Tamanhos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('embalagens')}}">Embalagens</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cadastros
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{url_for('marcainc')}}">Incluir Marcas</a></li>
+            <li><a class="dropdown-item" href="{{url_for('categinc')}}">Incluir Categorias</a></li>
+            <li><a class="dropdown-item" href="{{url_for('corinc')}}">Incluir Cores</a></li>
+            <li><a class="dropdown-item" href="{{url_for('tamanhoinc')}}">Incluir Tamanhos</a></li>
+            <li><a class="dropdown-item" href="{{url_for('embalinc')}}">Incluir Embalagens</a></li>
+            <li><a class="dropdown-item" href="{{url_for('produtoinc')}}">Incluir Produtos</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="p-2 m-auto text-center text-dark">
+        <h6 style="color: rgb(230,87,66)">{{(session['Store']['Name'])}}</h6>
+      </div>
     </div>
+  </div>
 </nav>

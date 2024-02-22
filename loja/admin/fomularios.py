@@ -18,6 +18,7 @@ class LoginFormulario(Form):
     email = StringField('E-mail', [validators.Length(min=6, max=35)])
     password = PasswordField('Informe a sua Senha', [validators.DataRequired()])
 
+
 def validacep(form, field):
     if len(field.data) == 8:
         import requests
@@ -69,7 +70,7 @@ class StoreForm(FlaskForm):
                                            validators.DataRequired('Faltou digitar a Unidade da Federação')
                                            ])
 
-    name = StringField('Nome', validators=[validators.Length(min=6, max=50, message="Nome deve ter no mínimo 6 e no máximo 50 caracteres"),
+    name = StringField('Nome', validators=[validators.Length(min=6, max=45, message="Nome deve ter no mínimo 6 e no máximo 45 caracteres"),
                                            validators.DataRequired(message='Faltou digitar o nome da loja')])
 
     freight_rate = IntegerField('Taxa Base Frete',[validators.NumberRange(min=0, max=50, message="Taxa frete base deve ser entre 0 e 50"),
@@ -85,3 +86,11 @@ class StoreForm(FlaskForm):
                                                    validaphone])
 
     submit = SubmitField('Cadastrar')
+
+class StoreUpdateForm(Form):
+    name = StringField('Nome', validators=[validators.Length(min=6, max=45, message="Nome deve ter no mínimo 6 e no máximo 45 caracteres"),
+                        validators.DataRequired(message='Faltou digitar o nome da loja')])
+    freight_rate = IntegerField('Taxa Base Frete',[validators.NumberRange(min=0, max=50, message="Taxa frete base deve ser entre 0 e 50"),
+                                                   validators.InputRequired(message="Faltou digitar a taxa base de frete")])
+    pages = IntegerField('Página do site',[validators.NumberRange(min=1, message="Qtde.de produtos por página deve ser no mínimo 1"),
+                                           validators.InputRequired(message="Faltou digitar a qtde.de produtos por página")])

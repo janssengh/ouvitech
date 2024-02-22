@@ -1,0 +1,18 @@
+https://www.google.com/search?q=consistir+campos+html&oq=consistir+campos+html&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigAdIBCjE0NDU0ajBqMTWoAgCwAgA&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:97228542,vid:qa9SHI6Jh98,st:0
+
+
+Alteração loja (lojaalt):
+    - não está validando campos
+
+Gravar na base de dados UPPERCASE
+
+Incluir obrigatoriedade inclusão da loja e exibir o nome da loja no navbar-admin
+
+Marca/Categoria:
+    Inclusão da marca e categoria em duplicidade dá erro
+    Alteração e exclusão, incluir store_id na seleção
+
+Editar para alterar produto:
+    Não carrega as imagens, precisa obrigatoriamente selecionar as imagens novamente
+
+Incluir section nas listas

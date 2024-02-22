@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% include 'navbar-admin.html' %}
+{% block content %}
+
+<section class="mt-5">
+    <div class="container">
+        <div class="row">
+          <div class="row justify-content-center align-items-center">
+              <div class="col-md-10 mx-auto col-lg-5">
+                    {% include "_mensagem.html" %}
+                    {% if cores %}
+                    <form method="post" class="p-4 p-md-5 border rounded-3 bg-light">
+                        <div class="text-center p-2 data-text">
+                            <h4>Cadastrar Cores</h4>
+                        </div>
+                        <input type="text" name="cor" class="form-control" required minlength="3" maxlength="45">
+                        <input type="submit" value="Cadastrar" class="btn btn-success mt-2">
+                        <a class="btn btn-danger mt-2" style="margin-left: 150px;" href="{{url_for('admin')}}">
+                            Cancelar
+                        </a>
+                    </form>
+      
+                    {% else %}
+      
+                    <form method="post" class="p-4 p-md-5 border rounded-3 bg-light">
+                        <div class="text-center p-2 data-text">
+                            <h4>Cadastrar Tamanhos</h4>
+                        </div>
+                        <input type="text" name="tamanho" class="form-control" required minlength="1" maxlength="45">
+                        <input type="submit" value="Cadastrar" class="btn btn-success mt-2">
+                        <a class="btn btn-danger mt-2" style="margin-left: 150px;" href="{{url_for('admin')}}">
+                            Cancelar
+                        </a>
+                  </form>
+                  {% endif %}
+              </div>
+          </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
